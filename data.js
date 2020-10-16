@@ -1,3 +1,5 @@
+//challenges[0].choices[0].description;
+
 export default [
     {
         id: 'peppermint',

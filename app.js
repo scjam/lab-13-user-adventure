@@ -17,6 +17,8 @@ form.addEventListener('submit', (e) => {
         candy: 0,
         friendship: 0,
         completed: {}
-        
+
     });
+
+    window.location.href = './board/';
 });
