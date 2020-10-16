@@ -1,7 +1,24 @@
 #challenges {
-    position: relative;
     background-image: url("../assets/candyland.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
     margin: auto;
+    width: 100%;
+    height: 100%
+}
+
+.challenge {
+    position: relative;
+}
+
+nav {
+    height: 100%;
+}
+
+section {
+    height: 100%;
+}
+
+main {
+    height: 100%;
 }

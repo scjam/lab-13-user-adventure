@@ -3,6 +3,7 @@ import { getUser, saveUser } from '../storage-utils.js';
 import { findById } from '../utils.js';
 
 const section = document.querySelector('section');
+const div = document.createElement('div');
 const searchParams = new URLSearchParams(window.location.search);
 const id = searchParams.get('id');
 const challenge = findById(challenges, id);
@@ -10,6 +11,9 @@ const h2 = document.createElement('h2');
 
 h2.textContent = challenge.title;
 section.appendChild(h2);
+
+div.textContent = challenge.description;
+section.appendChild(div);
 
 const form = document.createElement('form');
 section.appendChild(form);
@@ -25,7 +29,7 @@ challenge.choices.forEach(choice => {
     radio.value = choice.id;
     radio.name = 'choices';
 
-    label.append(span, radio);
+    label.append(radio, span);
     
     form.appendChild(label);
 });

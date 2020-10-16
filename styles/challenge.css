@@ -1,0 +1,28 @@
+main {
+    background-image: url("../assets/candycanebg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    width: 100%;
+    height: 100%
+}
+form {
+    border: 1px black solid;
+    padding: 12px;
+    font-size: larger;
+}
+
+div {
+    margin: 10px;
+    padding: 10px;
+    font-size: larger;
+    width: 70%;
+}
+
+label {
+    display: block;
+}
+
+button {
+    align-items: center;
+}

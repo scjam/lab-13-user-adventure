@@ -1,5 +1,5 @@
-//import challenges from '../data.js';
-//import { getUser } from '../storage-utils.js';
+import challenges from '../data.js';
+import { getUser } from '../storage-utils.js';
 
 //const ul = document.querySelector('ul');
 
@@ -14,6 +14,20 @@
 
 //     ul.append(li);
 // });
+profile();
+const user = getUser();
+const nav = document.getElementById('challenges');
+
+for (let i = 0; i < challenges.length; i++) {
+    const challenge = challenges[i];
+    let challengeDisplay = null;
+    if (user.completed[challenge.id]) {
+        challengeDisplay = completedChallenge(challenge);
+    } else {
+        challengeDisplay = createLink(challenge);
+    }
+    nav.appendChild(challengeDisplay);
+}
 
 function createLink(challenge) {
     const link = document.createElement('a');
@@ -28,4 +42,31 @@ function createLink(challenge) {
     return link;
 }
 
-export default createLink;
+function completedChallenge(challenge) {
+    const span = document.createElement('span');
+    span.classList.add('challenge');
+    span.classList.add('completed');
+
+    span.style.top = challenge.map.top;
+    span.style.left = challenge.map.left;
+
+    span.textContent = challenge.title;
+    return span;
+
+}
+
+function profile() {
+    const name = document.getElementById('name');
+    const candy = document.getElementById('candy');
+    const friendship = document.getElementById('friendship');
+
+    const user = getUser();
+
+    if (!user) {
+        window.location = './';
+    }
+
+    name.textContent = user.name;
+    candy.textContent = user.candy;
+    friendship.textContent = user.friendship;
+}
