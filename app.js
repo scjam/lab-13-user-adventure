@@ -1,4 +1,6 @@
 // import functions and grab DOM elements
+import { saveUser } from './storage-utils.js';
+
 const form = document.querySelector('form');
 
 // initialize state
@@ -9,5 +11,12 @@ form.addEventListener('submit', (e) => {
 
     const data = new FormData(form);
 
-    console.log(data.get('name'), data.get('class'));
+    saveUser({
+        name: data.get('name'),
+        color: data.get('class'),
+        candy: 0,
+        friendship: 0,
+        completed: {}
+        
+    });
 });
