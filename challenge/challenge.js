@@ -1,24 +1,17 @@
 import challenges from '../data.js';
+import { getUser, saveUser } from '../storage-utils.js';
 import { findById } from '../utils.js';
 
 const section = document.querySelector('section');
-
 const searchParams = new URLSearchParams(window.location.search);
-
 const id = searchParams.get('id');
-
 const challenge = findById(challenges, id);
-
 const h2 = document.createElement('h2');
 
 h2.textContent = challenge.title;
-
 section.appendChild(h2);
 
-console.log(challenge.choices);
-
 const form = document.createElement('form');
-
 section.appendChild(form);
 
 challenge.choices.forEach(choice => {
@@ -37,8 +30,31 @@ challenge.choices.forEach(choice => {
     form.appendChild(label);
 });
 
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    //const checked = document.querySelectorAll(':checked');
+});
+
 const button = document.createElement('button');
 
 button.textContent = 'Confirm';
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const checked = document.querySelector(':checked');
+    const selection = checked.value;
+    const choice = findById(challenge.choices, selection);
+    console.log(choice);
+
+    const user = getUser();
+
+    user.candy += choice.candy;
+    user.friendship += choice.friendship;
+    console.log(user);
+
+    saveUser(user);
+});
 
 form.appendChild(button);

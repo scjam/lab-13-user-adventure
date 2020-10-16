@@ -1,0 +1,7 @@
+#challenges {
+    position: relative;
+    background-image: url("../assets/candyland.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+}

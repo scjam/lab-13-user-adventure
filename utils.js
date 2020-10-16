@@ -6,4 +6,6 @@ export function findById(someArray, id) {
             return item;
         }
     }
+
+    return null;
 }

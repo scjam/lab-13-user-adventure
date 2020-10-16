@@ -9,30 +9,41 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <title>Adventures in Candy Land</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png"/>
-        </div>
+        <h1>Candy Land</h1>
     </header>
     <main>
         <section class="main-section">
-            <form>
-                <label>
-                    Name <input name="name" />
-                </label>
-                <label>
-                    <select name="color">
-                        <option value="red">Red</option>
-                        <option value="green">Green</option>
-                        <option value="blue">Blue</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="black">Black</option>
-                    </select>
-                </label>
+            <form id="user-sign-up">
+                <p>
+                <label for="name">Name:</label>
+                <input id="name" name="name" required>
+                </p>
+                <fieldset>
+                    <legend>Color:</legend>
+                    <p>
+                        <label>
+                            <input type="radio" name="color" required value="red">
+                            Red
+                        </label>
+                        <label>
+                            <input type="radio" name="color" required value="green">
+                            Green
+                        </label>
+                        <label>
+                            <input type="radio" name="color" required value="yellow">
+                            Yellow
+                        </label>
+                        <label>
+                            <input type="radio" name="color" required value="blue">
+                            Blue
+                        </label>
+                    </p>
+                </fieldset>
             <button>Play!</button>
             </form>
         </section>
